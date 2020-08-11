@@ -10,11 +10,19 @@ import net.md_5.bungee.api.plugin.Command;
 
 import java.util.HashMap;
 
+/**
+ * Main plugin's command handler. Built as a command design pattern
+ *
+ * @author Prof
+ */
 public class PluginCommand extends Command {
 
     private HashMap<String, SubCommand> availableSubCommands;
     private ConfigManager config;
 
+    /**
+     * Plugin command constructor
+     */
     public PluginCommand() {
         super("ats");
         this.config = ConfigManager.getInstance();
@@ -30,6 +38,11 @@ public class PluginCommand extends Command {
         };
     }
 
+    /**
+     * Executes the sub command listed in arguments
+     * @param sender The sender of the command
+     * @param args The list of command arguments
+     */
     @Override
     public void execute(CommandSender sender, String[] args) {
         if(sender instanceof ProxiedPlayer) {

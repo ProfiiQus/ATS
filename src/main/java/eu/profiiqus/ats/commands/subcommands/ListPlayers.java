@@ -10,16 +10,29 @@ import net.md_5.bungee.api.chat.TextComponent;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * Wrapper class for list players sub command
+ *
+ * @author Prof
+ */
 public class ListPlayers implements SubCommand {
 
     private DataManager dataManager;
     private ConfigManager config;
 
+    /**
+     * List players constructor
+     */
     public ListPlayers() {
         this.config = ConfigManager.getInstance();
         this.dataManager = DataManager.getInstance();
     }
 
+    /**
+     * Lists all tracked player's data
+     * @param sender Sender of the command
+     * @param args Command's arguments
+     */
     @Override
     public void execute(CommandSender sender, String[] args) {
         sender.sendMessage(new TextComponent(StaticUtils.alterColors(this.config.listHeader)));

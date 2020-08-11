@@ -9,8 +9,8 @@ import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 /**
- * Add Player class is a wrapper class for add player subcommand.
- * This subcommand should add the player to the list of tracked players.
+ * Add Player class is a wrapper class for add player sub command.
+ * This sub command should add the player to the list of tracked players.
  *
  * @author Prof
  */
@@ -20,12 +20,20 @@ public class AddPlayer implements SubCommand {
     private ConfigManager config;
     private ATS plugin;
 
+    /**
+     * Add Player constructor
+     */
     public AddPlayer() {
         this.plugin = ATS.getPlugin();
         this.config = ConfigManager.getInstance();
         this.dataManager = DataManager.getInstance();
     }
 
+    /**
+     * Adds player to tracked player's collection
+     * @param sender Sender of the command
+     * @param args Command's arguments
+     */
     @Override
     public void execute(CommandSender sender, String[] args) {
         if(args.length == 1) {

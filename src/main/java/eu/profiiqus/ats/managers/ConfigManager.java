@@ -11,6 +11,11 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.ArrayList;
 
+/**
+ * Class for handling and managing all plugin's configuration
+ *
+ * @author Prof
+ */
 public class ConfigManager {
 
     private File configFile;
@@ -23,15 +28,25 @@ public class ConfigManager {
 
     private static ConfigManager instance;
 
+    /**
+     * Config manager constructor
+     */
     private ConfigManager() {
         this.plugin = ATS.getPlugin();
     }
 
+    /**
+     * Gets singleton instance of Config manager
+     * @return Singleton instance of Config manager
+     */
     public static ConfigManager getInstance() {
         if(instance == null) instance = new ConfigManager();
         return instance;
     }
 
+    /**
+     * Sets up all variables and loads all configuration from files
+     */
     public void setupFiles() {
 
         if(!plugin.getDataFolder().exists()) {
@@ -50,6 +65,9 @@ public class ConfigManager {
         }
     }
 
+    /**
+     * Loads all values from file into configuration fields
+     */
     public void loadConfig() {
         try {
             this.config = ConfigurationProvider.getProvider(YamlConfiguration.class).load(new File(this.plugin.getDataFolder(), "config.yml"));
