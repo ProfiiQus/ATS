@@ -1,0 +1,5 @@
+name: ATS
+version: ${project.version}
+main: eu.profiiqus.ats.ATS
+description: Admin Team Stalker
+author: ProfiiQus

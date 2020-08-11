@@ -1,0 +1,40 @@
+# delay in minutes between autosaving data
+delay: 1
+
+# mysql connection parameters, required for plugin to function
+mysql:
+    host: localhost
+    port: 3306
+    user: root
+    password: ""
+    database: minecraft
+    # minimum amount of open connections
+    min-connections: 10
+    # maximum amount of open connections
+    max-connections: 20
+    # connection timeout
+    timeout: 30000
+
+messages:
+    not-enough-permissions: "&8[&3ATS&8] &cNot enough permissions."
+    command-usage: "&8[&3ATS&8] &fCorrect usage: &7/ats {ACTION} <user>"
+    player-not-found: "&8[&3ATS&8] &fPlayer &b{PLAYER} &fnot found"
+    player-added: "&8[&3ATS&8] &fStarted tracking player &b{PLAYER}"
+    player-removed: "&8[&3ATS&8] &fStopped tracking player &b{PLAYER}"
+    player-list:
+        header: "&8&m         &8[ &3&lATS &7Player stats &8]&m                             "
+        format: " &7* &3{PLAYER}&f: &b{TIME}&f played, &b{TIMES_JOINED} &ftimes joined"
+        footer: "&8&m                                                                "
+    player-show: "&8[&3ATS&8] &b{PLAYER} &fplayed for a total of &b{TIME_PLAYED} &f(joined &3{TIMES_JOINED} &ftimes)"
+    player-not-tracked: "&8[&3ATS&8] &fPlayer &b{PLAYER} &fis currently not tracked"
+    player-already-tracked: "&8[&3ATS&8] &fPlayer &b{PLAYER} &fis already being tracked"
+    stats-reset: "&8[&3ATS&8] &fSuccessfully reset player stats"
+    help-menu:
+        - "&8&m         &8[ &3Admin Team Stalker &8]&m                           "
+        - " &7* &b/ats track <user> &7- &fStarts tracking user"
+        - " &7* &b/ats drop <user> &7- &fStops tracking user"
+        - " &7* &b/ats show <user> &7- &fShows player stats"
+        - " &7* &b/ats list <user> &7- &fLists tracked player"
+        - " &7* &b/ats help &7- &fShows this help menu"
+        - " &7* &b/ats reset &7- &fResets player's data"
+        - "&8&m                                                                "
